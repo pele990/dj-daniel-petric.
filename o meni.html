@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>o meni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dokdo&display=swap" rel="stylesheet">
+    <style>
+        nav a.active {
+            width:auto;
+            background-color: #787070;
+            color: rgb(255, 255, 255);
+        }
+        
+        nav {
+            display: flex;
+            align-items:center;
+            background-color: #000000; 
+            height: 100px; 
+        }
+
+        .logo {
+            height: 100px;
+            padding-left: 20px;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            margin: 0 10px;
+            flex-grow: 1;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        main {
+            font-family: 'Protest Guerrilla', cursive;    
+            color: #ffffff;    
+            max-width: 100%;
+            object-position:center;
+            padding: 0px;
+            font-size: 24px; 
+        }
+
+        body {
+            background-image: url('slike/o\ meni\ pozadina.jpg');  
+            margin-inline-start: auto;   
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            background-color: #000000;
+            font-size: 14px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 0px;
+        }
+
+        .datum_i_sat {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            vertical-align:middle;
+            margin-right: 20px;  
+        }
+
+        .tekst_o_meni {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .profilna_slika {
+            text-align: center;
+        }   
+
+        .profilna_slika img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            position: fixed;
+            text-align:center;
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="slike/logo.png" alt="Logo" class="logo">
+        <a href="dj daniel petric.html">POČETNA</a>
+        <a href="o meni.html" class="active">O MENI</a>
+        <a href="usluge.html">USLUGE</a>
+        <a href="kontakt.html">KONTAKT</a>
+    </nav>
+
+    <main> 
+        <div class="profilna_slika">
+            <img src="slike/profilna.jpg" alt="Profilna slika">
+        </div>
+
+        <div class="tekst_o_meni">
+            <p>Danijel Petrić, mladi DJ iz Slavonskog Broda, svoju strast prema glazbi njeguje od malih nogu,
+            slušajući hitove izvođača poput <a href="https://www.arminvanbuuren.com/" target="_blank">Armin Van Buuren</a>,
+            <a href="https://www.tiesto.com/" target="_blank">DJ Tiesto</a>, <a href=""></a>, <a href="https://faithless.co.uk/" target="_blank">Faithless</a>,
+            i mnogih drugih velikana.</p>
+        </div>
+
+        <div class="tekst_o_meni">
+            <p>Danijel je član <a href="https://www.instagram.com/msdjteam?igsh=cWFhN2t2cDh2aXN2" target="_blank">MS DJ TEAM</a> iz Đakova, renomiranog tima koji već 15 godina pokriva razne vrste evenata,
+            od privatnih do javnih zabava i manifestacija.</p>
+        </div>
+
+        <div class="tekst_o_meni">
+            <p>Svojim open format pristupom, Danijel pokriva sve žanrove internacionalne glazbe i domaćeg balkanskog zvuka.
+            Profesionalizam u rukovanju opremom, prilagodljivost i kreativnost u miksanju čine ga traženim DJ-em za različite vrste događanja.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="centered">&copy; 2024 daniel petric. Sva prava zadržana.</p>
+        <div class="datum_i_sat">
+            <p id="datum_i_sat"></p>
+        </div>
+    </footer>
+
+    <script src="JavaScript/datum_i_sat.js"></script>
+</body>
+</html>  

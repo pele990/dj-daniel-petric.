@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kontakt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Linkanje fontova -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dokdo&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS stilovi */
+        nav a.active {
+            width:auto;
+            background-color: #787070;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: #000000;
+            height: 100px;
+        }
+
+        .logo {
+            height: 100px;
+            padding-left: 20px;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 20px;
+            margin: 0 10px;
+            flex-grow: 1;
+        }
+
+        nav a:hover {
+            background-color: #dddddd;
+            color: #000000;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('slike/djbg.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            margin-bottom: 40px; /* Smanjena vrijednost margine ispod kontejnera */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Prozirna bijela pozadina */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.5; /* Prozirnost forme */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px; /* Postavljena veličina fonta */
+        }
+
+        form {
+            padding: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.5; /* Prozirnost forme */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Uključuje padding i border u širinu elementa */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            background-color: #000000;
+            font-size: 14px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 0;
+        }
+
+        .datum_i_sat {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            vertical-align: middle;
+            margin-right: 20px;  
+        }
+
+        .copyright {
+            position: fixed;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigacijska traka -->
+    <nav>
+        <img src="slike/logo.png" alt="Logo" class="logo">
+        <a href="dj daniel petric.html">POČETNA</a>
+        <a href="o meni.html">O MENI</a>
+        <a href="usluge.html">USLUGE</a>
+        <a href="kontakt.html" class="active">KONTAKT</a>
+    </nav>
+
+    <main> 
+        <!-- Glavni sadržaj stranice -->
+        <div class="container">
+            <h1>Kontaktirajte nas</h1>
+            <!-- Forma za kontakt -->
+            <form action="petricdanijel.1471997@gmail.com" method="post" enctype="text/plain">
+                <label for="ime">Ime:</label>
+                <input type="text" id="ime" name="ime" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="poruka">Poruka:</label>
+                <textarea id="poruka" name="poruka" rows="6" required></textarea>
+                
+                <input type="submit" value="Pošalji"> <br>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Copyright informacije -->
+        <p class="centered"> &copy; 2024 daniel petric. Sva prava zadržana.</p>
+        <!-- Datum i sat -->
+        <div class="datum_i_sat">
+            <p id="datum_i_sat"></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript za prikazivanje datuma i sata -->
+    <script src="JavaScript/datum_i_sat.js"></script>
+
+</body>
+</html>
