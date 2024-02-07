@@ -8,61 +8,67 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dokdo&display=swap" rel="stylesheet">
     <style>
-         body {
-            
-            background-image: url('slike/djbg.jpg');
-    background-repeat: repeat;
-    background-position: center top; /* Postavite početnu poziciju slike pozadine na sredinu gore */
-    margin: 0;
-    padding: 0;
-         }
+        body {
+            background-image: url('slike/o\ meni\ pozadina.jpg');
+            background-repeat: repeat;
+            background-position: center top; 
+            margin: 0;
+            padding: 0;
+        }
 
         nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #000000; 
-    height: 100px; 
-    max-width: 100%; 
-    margin: 0 auto; 
-    padding: 0 20px;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000000; 
+            height: 100px; 
+            max-width: 100%; 
+            margin: 0 auto; 
+            padding: 0 20px;
+        }
 
-.logo {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
+        .logo {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
 
-.logo img {
-    height: 100px;
-    padding-left: 20px;
-}
+        .logo img {
+            height: 100px;
+            padding-left: 20px;
+        }
 
-.meni {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1; /* Da bi zauzimalo preostali prostor */
-}
+        .meni {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; 
+        }
 
-.meni a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 20px; 
-    margin: 0 10px;
-}
+        .meni a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px; 
+            margin: 0 10px;
+        }
 
-.meni a:last-child {
-    margin-right: 0; 
-}
+        .meni a:last-child {
+            margin-right: 0; 
+        }
 
+        nav a.active {
+            background-color: #ddd;
+            color: #000000;
+            box-shadow: 0px 0px 10px 2px #000000; 
+            border-radius: 20px;
+        }
 
         nav a:hover {
             background-color: #ddd;
-            color: black;
+            color: #000000;
+            border-radius: 20px;
         }
 
         @media screen and (max-width: 600px) {
@@ -83,20 +89,12 @@
             font-size: 24px; 
         }
 
-        body {
-            background-image: url('slike/o\ meni\ pozadina.jpg');  
-            margin-inline-start: auto;   
-            max-width: 100%;
-            height: auto;
-        }
-
         footer {
             position: fixed;
             bottom: 0;
             height: 50px;
             width: 100%;
             background-color: #000000;
-            font-size: 14px;
             text-align: center;
             color: #ffffff;
             margin-bottom: 0px;
@@ -117,8 +115,16 @@
             margin: auto;
             margin-bottom: 30px;
             text-align: justify;
-            -webkit-text-stroke-width: 1px; /* Debljina ruba */
-    -webkit-text-stroke-color: rgb(255, 255, 255); /* Boja ruba */
+            -webkit-text-stroke-width: 1px; 
+            -webkit-text-stroke-color: #ffffff; 
+        }
+
+        .tekst_o_meni a[target="_blank"] {
+            color: #800080; /* Crvena boja linka */
+        }
+
+        .tekst_o_meni a[target="_blank"]:hover {
+            color: #0000ff; /* Plava boja linka kada se pređe mišem preko njega */
         }
 
         .profilna_slika {
@@ -131,25 +137,19 @@
             display: block;
             margin-bottom: 20px;
         }
-
-        .copyright {
-            position: fixed;
-            text-align:center;
-            vertical-align:middle;
-        }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">
             <img src="slike/logo.png" alt="Logo">
-    </div>
+        </div>
 
-    <div class="meni">
+        <div class="meni">
             <a href="dj daniel petric.html">POČETNA</a>
-            <a href="o meni.html">O MENI</a>
+            <a href="o meni.html" class="active">O MENI</a>
             <a href="usluge.html">USLUGE</a>
-            <a href="kontakt.html" class="active">KONTAKT</a>
+            <a href="kontakt.html">KONTAKT</a>
         </div>
     </nav>
 
@@ -185,4 +185,4 @@
 
     <script src="JavaScript/datum_i_sat.js"></script>
 </body>
-</html>  
+</html>

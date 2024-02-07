@@ -42,10 +42,10 @@
         }
 
         .meni a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-size: 18px;
-    font-weight: bold;
+            font-weight: bold;
             padding: 20px; 
             margin: 0 10px;
         }
@@ -65,7 +65,7 @@
 
         .drustvene_mreze a:hover {
             background-color: transparent; 
-            color: white;
+            color: #ffffff;
         }
 
         .drustvene_mreze a:hover img {
@@ -75,14 +75,22 @@
         .drustvene_mreze img {
             width: 30px; 
             height: 30px; 
-            border: 2px solid white; 
+            border: 2px solid #ffffff; 
             border-radius: 50%; 
             padding: 2px;
         }
 
         nav a:hover {
             background-color: #ddd;
-            color: black;
+            color: #000000;
+            border-radius: 20px;
+        }
+
+        nav a.active {
+            background-color: #ddd;
+            color: #000000;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 2px #000000; 
         }
 
         @media screen and (max-width: 600px) {
@@ -96,27 +104,26 @@
 
         .citat {
             font-family: 'Dancing Script', cursive;
-            font-weight:;
             font-size: 30px;
             padding: 20px;
             margin: 80px 0 0 50px;
-            color: rgb(0, 0, 0); /* Dodano */
+            color: #000000;
         }
 
         .citat p {
-            margin: 0; /* Dodano */
+            margin: 0;
         }
 
         .bijela_boja {
-            color: white;
+            color: #ffffff;
         }
 
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
+            background-color: #000000;
             text-align: center;
-            font-size: 14px;
             color: #ffffff;
             margin-bottom: 0;
         }
@@ -125,11 +132,20 @@
             position: fixed;
             bottom: 0;
             right: 0;
+            font-size: 14px;
             text-align: right; 
             margin-right: 20px;  
         }
+
+        .copyright {
+            position: fixed;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 14;
+        }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="meni">
@@ -147,17 +163,21 @@
             <a href="https://soundcloud.com/djdanielpetric?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"><img src="slike/SoundCloud logo.jpg" alt="SoundCloud" class="drustvene_mreze"></a>
         </div>
     </nav>
+
     <div class="citat">
         <p>"I love to make people dance,<br>it's a way of bringing people together <br>
         regardless of religion, nationality, sexuality, belief."
         <br><span class="bijela_boja">David Guetta</span></p>
     </div>
+
     <footer>
         <div class="datum_i_sat">
             <p id="datum_i_sat"></p>
         </div>
         <p>&copy; 2024 daniel petric. Sva prava zadržana.</p>
     </footer>
+
     <script src="JavaScript/datum_i_sat.js"></script>
+
 </body>
 </html>
