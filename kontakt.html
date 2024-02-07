@@ -201,6 +201,25 @@
         </div>
     </footer>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("service_1hvea6r"); // Zamijeni "user_youruserid" s tvojim korisničkim ID-om iz EmailJS-a
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_1hvea6r', 'your_template_id', this)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response);
+                    // Dodaj ovdje svoj kod za prikaz poruke o uspješnom slanju
+                }, function(error) {
+                    console.log('Error sending email:', error);
+                    // Dodaj ovdje svoj kod za prikaz poruke o neuspješnom slanju
+                });
+        });
+    </script>
+
     
 
   
