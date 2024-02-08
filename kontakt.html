@@ -70,14 +70,43 @@
             border-radius: 20px;
         }
 
-        @media screen and (max-width: 600px) {
-            nav a {
-                float: none;
-                display: block;
-                width: 100%;
-                text-align: left;
-            }
+        @media screen and (max-width: 960px) {
+              nav {
+                height: auto; 
+                flex-direction: column; 
+              }
+
+             .logo {
+                padding-left: 0; 
+                margin-bottom: 10px; 
+              }
+
+              .meni, .drustvene_mreze {
+                width: 100%; 
+                justify-content: center; 
+              }
+
+              .meni a, .drustvene_mreze a {
+                margin: 5px; 
+              }
+
+              .citat {
+                margin: 20px; 
+              }
+
+              footer {
+                position: static; 
+                margin-top: 20px; 
+              }
+
+              .datum_i_sat {
+                position: static; 
+                text-align: center;
+               margin-bottom: 10px;
+              }
+
         }
+
 
         .container {
             max-width: 500px;
