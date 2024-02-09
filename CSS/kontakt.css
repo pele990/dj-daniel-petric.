@@ -1,0 +1,180 @@
+body {
+    background-image: url('../slike/djbg.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000; 
+    border-bottom: 4px solid #dddddd; 
+    height: 100px; 
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    padding-left: 20px;
+}
+
+.meni {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; 
+}
+
+.meni a {
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px; 
+    margin: 0 10px;
+}
+
+.meni a:last-child {
+    margin-right: 0; 
+}
+
+nav a:hover {
+    background-color: #dddddd;
+    color: #000000;
+    border-radius: 20px;
+}
+
+nav a.active {
+    background-color: #ddd;
+    color: #000000;
+    box-shadow: 0px 0px 10px 2px #000000; 
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .logo img {
+        height: 80px; 
+    }
+
+    .meni {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px; 
+    }
+
+    .meni a {
+        margin: 0;
+        padding: 10px; 
+    }
+
+    .slanjeporuke {
+        max-width: 90%;
+        margin: 20px auto; 
+    }
+
+    footer {
+        position: static;
+        margin-top: 20px;
+        bottom: auto; 
+    }
+
+    .datum_i_sat {
+        position: static;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .copyright {
+        margin-top: 10px;
+    }
+}
+
+.slanjeporuke {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 20px; 
+    padding: 20px;  
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 24px; 
+}
+
+form {
+    padding: 0;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.buton {
+    background-color: #9E9E9E;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buton:hover {
+    background-color: #697487;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.datum_i_sat {
+    position: fixed;
+    font-size: 14;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    vertical-align: middle;
+    margin-right: 20px;  
+}
+
+.copyright {
+    position: fixed;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14;
+}

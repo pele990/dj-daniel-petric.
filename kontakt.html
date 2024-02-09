@@ -4,185 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kontakt</title>
+	<link rel="stylesheet" type="text/css" href="CSS/kontakt.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Dokdo&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('slike/djbg.jpg');
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #000000; 
-            height: 100px; 
-            max-width: 100%; 
-            margin: 0 auto; 
-            padding: 0 20px;
-        }
-
-        .logo {
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 100px;
-            padding-left: 20px;
-        }
-
-        .meni {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1; 
-        }
-
-        .meni a {
-            color:#ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 20px; 
-            margin: 0 10px;
-        }
-
-        .meni a:last-child {
-            margin-right: 0; 
-        }
-
-        nav a:hover {
-            background-color: #dddddd;
-            color: #000000;
-            border-radius: 20px;
-        }
-
-        nav a.active {
-            background-color: #ddd;
-            color: #000000;
-            box-shadow: 0px 0px 10px 2px #000000; 
-            border-radius: 20px;
-        }
-
-        @media screen and (max-width: 960px) {
-              nav {
-                height: auto; 
-                flex-direction: column; 
-              }
-
-             .logo {
-                padding-left: 0; 
-                margin-bottom: 10px; 
-              }
-
-              .meni, .drustvene_mreze {
-                width: 100%; 
-                justify-content: center; 
-              }
-
-              .meni a, .drustvene_mreze a {
-                margin: 5px; 
-              }
-
-              .citat {
-                margin: 20px; 
-              }
-
-              footer {
-                position: static; 
-                margin-top: 20px; 
-              }
-
-              .datum_i_sat {
-                position: static; 
-                text-align: center;
-               margin-bottom: 10px;
-              }
-
-        }
-
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            margin-bottom: 20px; 
-            padding: 20px;  
-        }
-
-        h1 {
-            margin-top: 0;
-            text-align: center;
-            font-size: 24px; 
-        }
-
-        form {
-            padding: 0;
-            border-radius: 10px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            box-sizing: border-box; 
-        }
-
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            height: 50px;
-            width: 100%;
-            background-color: #000000;
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 0;
-        }
-
-        .datum_i_sat {
-            position: fixed;
-            font-size: 14;
-            bottom: 0;
-            right: 0;
-            text-align: right;
-            vertical-align: middle;
-            margin-right: 20px;  
-        }
-
-        .copyright {
-            position: fixed;
-            text-align: center;
-            vertical-align: middle;
-            font-size: 14;
-        }
-    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+       (function(){
+          emailjs.init({
+            publicKey: "PKj2ugdBaRJMej3v-",
+          });
+       })();
+      
+      function SendMail() {
+        var params = {
+          ime: document.getElementById("ime").value,
+          email: document.getElementById("email").value,
+          poruka: document.getElementById("poruka").value
+        };
+        
+        emailjs.send("service_1hvea6r", "template_j78u7yd", params)
+          .then(function(res) {
+            alert("Uspješno poslano!");
+          })
+          .catch(function(error) {
+            console.error('Došlo je do greške pri slanju e-pošte:', error);
+            alert('Došlo je do greške pri slanju e-pošte. Molimo pokušajte ponovno.');
+          });
+      }
+    </script>
+    
+    
 </head>
 
 <body>
@@ -201,22 +53,21 @@
 </nav>
 
 <main> 
-    <div class="container">
+    <div class="slanjeporuke">
         <h1>Kontaktirajte nas</h1>
        
-        <form id="contact-form">
-            <label for="ime">Ime:</label><br>
-            <input type="text" id="ime" name="ime" required><br>
-        
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-        
-            <label for="poruka">Poruka:</label><br>
-            <textarea id="poruka" name="poruka" rows="4" required></textarea><br>
-        
-            <input type="submit" value="Pošalji">
+        <form id="kontakt" method="post" enctype="text/plain">
+            <label class="label" for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime" required>
+            
+            <label class="label" for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label class="label" for="poruka">Poruka:</label>
+            <textarea id="poruka" name="poruka" rows="6" required></textarea>
+            
+            <button class="buton" type="button" onclick="SendMail()">Pošalji</button>
         </form>
-        
     </div>
 </main>
 

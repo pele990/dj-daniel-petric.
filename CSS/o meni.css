@@ -1,0 +1,191 @@
+body {
+      background-image: url('../slike/o\ meni\ pozadina.jpg');
+      background-repeat: repeat;
+      background-position: center top; 
+      margin: 0;
+      padding: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000000; 
+			border-bottom: 4px solid #dddddd; 
+            height: 100px; 
+            max-width: 100%; 
+            margin: 0 auto; 
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100px;
+            padding-left: 20px;
+        }
+
+        .meni {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; 
+        }
+
+        .meni a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 20px; 
+            margin: 0 10px;
+        }
+
+        .meni a:last-child {
+            margin-right: 0; 
+        }
+
+        nav a.active {
+            background-color: #ddd;
+            color: #000000;
+            box-shadow: 0px 0px 10px 2px #000000; 
+            border-radius: 20px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #000000;
+            border-radius: 20px;
+        }
+
+				@media screen and (max-width: 600px) {
+					nav {
+						height: auto;
+						flex-direction: column;
+					}
+
+					.logo img {
+						height: 80px; 
+					}
+
+					.meni {
+						width: 100%;
+						justify-content: space-around;
+						margin-top: 10px; 
+					}
+
+					.meni a {
+						margin: 0;
+						padding: 10px; 
+					}
+
+					.profilna_slika img {
+						width: 100%;
+						margin-bottom: 10px;
+					}
+
+					.tekst_o_meni {
+						padding: 10px; 
+						max-width: 90%; 
+						margin: auto;
+						margin-bottom: 20px;
+					}
+
+					footer {
+						position: static;
+						margin-top: 20px;
+						bottom: auto; 
+					}
+
+					.datum_i_sat {
+						position: static;
+						text-align: center;
+						margin-bottom: 10px;
+					}
+				}
+
+
+
+        main {
+            font-family: 'Protest Guerrilla', cursive;    
+            color: #3e4f6e;    
+            max-width: 100%;
+            object-position:center;
+            padding: 0px;
+            font-size: 24px; 
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            background-color: #000000;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 0px;
+        }
+
+        .datum_i_sat {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            vertical-align:middle;
+            margin-right: 20px;  
+        }
+
+        .profilna_slika {
+			text-align: center;
+		}
+
+		.profilna_slika img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: auto; 
+			border-radius: 10px; 
+		}
+
+		.tekst_o_meni {
+			padding: 20px;
+			max-width: 800px;
+			margin: auto;
+			margin-bottom: 30px;
+			text-align: justify;
+			-webkit-text-stroke-width: 1px; 
+			-webkit-text-stroke-color: #ffffff; 
+			position: relative;
+			overflow: hidden; 
+		}
+
+		.tekst_o_meni::before {
+			content: ''; 
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1; 
+			background-image: url('../slike/pozadina.jpg'); 
+			background-size: cover; 
+			background-position: center; 
+			opacity: 0.5; 
+		}
+		
+		.tekst_o_meni a[target="_blank"] {
+			color: #00BFFF; 
+		}
+
+		.tekst_o_meni a[target="_blank"]:hover {
+			color: #ff0000; 
+		}
+
+    
+
+
+           
