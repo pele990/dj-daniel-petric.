@@ -17,15 +17,32 @@
        })();
       
       function SendMail() {
+        var ime = document.getElementById("ime").value;
+        var email = document.getElementById("email").value;
+        var poruka = document.getElementById("poruka").value;
+        
+        // Provjeri jesu li sva polja ispunjena
+        if (!ime || !email || !poruka) {
+            alert('Molimo, ispunite sva polja forme prije slanja.');
+            return;
+        }
+		
+		 var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.match(emailFormat)) {
+        alert('Molimo, unesite ispravnu email adresu.');
+        return;
+    }
+
         var params = {
-          ime: document.getElementById("ime").value,
-          email: document.getElementById("email").value,
-          poruka: document.getElementById("poruka").value
+          ime: ime,
+          email: email,
+          poruka: poruka
         };
         
         emailjs.send("service_1hvea6r", "template_j78u7yd", params)
           .then(function(res) {
             alert("Uspješno poslano!");
+			document.getElementById("kontakt").reset();
           })
           .catch(function(error) {
             console.error('Došlo je do greške pri slanju e-pošte:', error);
